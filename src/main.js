@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import LuckDraw from 'vue-luck-draw'
+
+Vue.use(LuckDraw)
 
 Vue.config.productionTip = false
 
