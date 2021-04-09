@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import LuckDraw from 'vue-luck-draw'
-
+import 'amfe-flexible'
 Vue.use(LuckDraw)
 
 Vue.config.productionTip = false
