@@ -63,11 +63,16 @@
         10.凡参与活动的客户，即视为接受活动所有规则，在法律范围内的最终解释权归中信银行所有。
       </p>
     </div>
+    <popup-fail @try-again="startCallBack"></popup-fail>
   </div>
 </template>
 
 <script>
+import popupFail from '../components/popupFail'
 export default {
+  components: {
+    popupFail
+  },
   data () {
     return {
       prizes: [
@@ -156,7 +161,7 @@ export default {
     startCallBack () {
       this.$refs.LuckyWheel.play()
       setTimeout(() => {
-        this.$refs.LuckyWheel.stop((Math.random() * 8) >> 0)
+        this.$refs.LuckyWheel.stop(1)
       }, 2000)
     },
     endCallBack (prize) {
