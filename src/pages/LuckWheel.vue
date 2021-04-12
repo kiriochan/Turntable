@@ -55,17 +55,8 @@ export default {
   },
   data () {
     return {
-      prizes: [
-        { name: '0' },
-        { name: '1' },
-        { name: '2' },
-        { name: '3' },
-        { name: '4' },
-        { name: '5' },
-        { name: '6' },
-        { name: '7' }
-      ],
-      buttons: [
+      prizes: [], // 转盘奖品列表
+      buttons: [ // 转盘中间按钮 初始化
         {
           radius: '50px',
           imgs: [
@@ -77,7 +68,7 @@ export default {
           ]
         }
       ],
-      blocks: [
+      blocks: [ // 转盘背景和边框 初始化
         { padding: '0px' },
         {
           padding: '0px',
@@ -94,15 +85,15 @@ export default {
         fontColor: '#303133',
         fontSize: '10px'
       },
-      defaultConfig: {
+      defaultConfig: { // 转盘偏转角度
         gutter: '1px',
         offsetDegree: 22.5
       },
-      prizeData: { name: '礼物', img: require('@/assets/images/my_gift.png'), prizeType: false }
+      prizeData: { name: '礼物', img: require('@/assets/images/my_gift.png'), prizeType: false } // 抽中
     }
   },
   mounted () {
-    this.getPrizesList()
+    this.getPrizesList(); // 请求奖品列表数据
   },
   methods: {
     getPrizesList () {
@@ -139,13 +130,14 @@ export default {
       })
       this.prizes = prizes
     },
-    startCallBack () {
-      this.$refs.LuckyWheel.play()
-      setTimeout(() => {
-        this.$refs.LuckyWheel.stop(1)
-      }, 2000)
+    startCallBack () { // 抽奖回调
+      this.$refs.LuckyWheel.play();
+      let stopTimer = setTimeout(() => {
+        this.$refs.LuckyWheel.stop(1);  // 控制转盘指针停止位置
+        clearTimeout(stopTimer);
+      }, 2000);
     },
-    endCallBack (prize) {
+    endCallBack (prize) { // 抽奖结束回调
       console.log(prize)
     },
     toMyPrize () {
