@@ -101,14 +101,14 @@ export default {
     getPrizesList () {
       const prizes = []
       let data = [
-        { name: '谢谢参与', img: require('@/assets/images/btn-t.png') },
-        { name: '礼物', img: require('@/assets/images/btn-t.png') },
-        { name: '抽奖券', img: require('@/assets/images/btn-t.png') },
-        { name: '元宝', img: require('@/assets/images/btn-t.png') },
-        { name: '元宝', img: require('@/assets/images/btn-t.png') },
-        { name: '抽奖券', img: require('@/assets/images/btn-t.png') },
-        { name: '元宝', img: require('@/assets/images/btn-t.png') },
-        { name: '抽奖券', img: require('@/assets/images/btn-t.png') }
+        { name: '谢谢参与', img: require('@/assets/images/button-begin.png') },
+        { name: '礼物', img: require('@/assets/images/button-begin.png') },
+        { name: '抽奖券', img: require('@/assets/images/button-begin.png') },
+        { name: '元宝', img: require('@/assets/images/button-begin.png') },
+        { name: '元宝', img: require('@/assets/images/button-begin.png') },
+        { name: '抽奖券', img: require('@/assets/images/button-begin.png') },
+        { name: '元宝', img: require('@/assets/images/button-begin.png') },
+        { name: '抽奖券', img: require('@/assets/images/button-begin.png') }
       ]
       data.forEach((item, index) => {
         prizes.push({
@@ -126,7 +126,6 @@ export default {
             {
               src: item.img,
               width: '30%',
-              height: '40%',
               top: '48%'
             }
           ]

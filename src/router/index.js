@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import luckWheel from '@/pages/luckWheel'
+import luckWheel from '@/pages/LuckWheel'
 import myPrize from '@/pages/myPrize'
 
 Vue.use(Router)
@@ -10,7 +10,7 @@ export default new Router({
     {
       path: '/luckWheel',
       name: 'luckWheel',
-      component: luckWheel
+      component: LuckWheel
     },
     {
       path: '/myPrize',
