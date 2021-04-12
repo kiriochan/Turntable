@@ -1,7 +1,7 @@
 <template>
   <div class="lucky-wheel">
     <div class="lucky-wheel-wrap">
-      <div class="lucky-wheel-getted">我的奖品</div>
+      <div class="lucky-wheel-getted" @click="toMyPrize">我的奖品</div>
       <div class="lucky-wheel-main">
         <LuckyWheel
           class="luck-draw"
@@ -21,11 +21,11 @@
     <div class="lucky-wheel-rules">
       <p style="font-size:14px;">活动细则</p>
       <br/><p>
-      <p>1. 活动期间，2021年1月1日至2021年12月31日</p>
+      1. 活动期间，2021年1月1日至2021年12月31日</p>
       <br/><p>
-      2. 活动期间：每人每月有3词抽奖机会，每月抽奖机会不累积叠加；</p>
+      2. 活动期间：每人每月有3次抽奖机会，每月抽奖机会不累积叠加；</p>
       <br/><p>
-      3. 实物奖品请在「我的奖品」中查看并领取，满减优惠券请前往中信手机银行「生活」—— 中信商城 —— 个人——卡券包中查看，并在有效期内兑换或使用；手机话费将在T+5个工作日1内为客户充值至中奖后所填的手机号中；</p>
+      3. 实物奖品请在「我的奖品」中查看并领取，满减优惠券请前往中信手机银行「生活」—— 中信商城 —— 个人——卡券包中查看，并在有效期内兑换或使用；手机话费将在T+5个工作日内为客户充值至中奖后所填的手机号中；</p>
       <br/><p>
       4.中奖客户须填写完整的中奖信息，由于信息填写错误导致奖品无法发放或发放不成功的视为中奖客户主动放弃获奖资格;</p>
       <br/><p>
@@ -42,14 +42,16 @@
       10.凡参与活动的客户，即视为接受活动所有规则，在法律范围内的最终解释权归中信银行所有。</p>
     </div>
     <popup-fail @try-again="startCallBack"></popup-fail>
+    <popup-success :param="prizeData"></popup-success>
   </div>
 </template>
 
 <script>
 import popupFail from '../components/popupFail'
+import popupSuccess from '../components/popupSuccess'
 export default {
   components:{
-    popupFail
+    popupSuccess, popupFail
   },
   data () {
     return {
@@ -86,6 +88,7 @@ export default {
         gutter: '1px',
         offsetDegree: 22.5
       },
+      prizeData: { name: '礼物', img: require('@/assets/images/my_gift.png'), prizeType: false }
     }
   },
   mounted () {
@@ -131,6 +134,9 @@ export default {
     endCallBack (prize) {
       console.log(prize)
     },
+    toMyPrize () {
+      this.$router.push('myPrize');
+    }
   }
 }
 </script>
@@ -170,6 +176,7 @@ export default {
   top: 150px;
   right: 0;
   letter-spacing: 1px;
+  z-index: 11;
 }
 
 .lucky-wheel-main{
