@@ -65,24 +65,34 @@ export default {
         { name: '6' },
         { name: '7' }
       ],
-      buttons: [{
-        radius: '50px',
-        imgs: [{ src: require('@/assets/images/button_begin.png'), width: '105%', top: '-120%' }]
-      }],
+      buttons: [
+        {
+          radius: '50px',
+          imgs: [
+            {
+              src: require('@/assets/images/button_begin.png'),
+              width: '105%',
+              top: '-120%'
+            }
+          ]
+        }
+      ],
       blocks: [
         { padding: '0px' },
-        { 
-            padding: '0px',
-            imgs: [{
-                src: require('@/assets/images/table.png'),
-                width: '100%',
-                rotate: true
-            }]
+        {
+          padding: '0px',
+          imgs: [
+            {
+              src: require('@/assets/images/table.png'),
+              width: '100%',
+              rotate: true
+            }
+          ]
         }
       ],
       defaultStyle: {
         fontColor: '#303133',
-        fontSize: '10px',
+        fontSize: '10px'
       },
       defaultConfig: {
         gutter: '1px',
@@ -96,7 +106,7 @@ export default {
   },
   methods: {
     getPrizesList () {
-      const prizes = [];
+      const prizes = []
       let data = [
         { name: '谢谢参与', img: require('@/assets/images/my_gift.png') },
         { name: '礼物', img: require('@/assets/images/my_gift.png') },
@@ -110,17 +120,21 @@ export default {
       data.forEach((item, index) => {
         prizes.push({
           name: item.name,
-          fonts: [{ 
-            text: item.name, 
-            top: '15%',
-            fontColor: '#fff',
-            fontSize: '14px'
-          }],
-          imgs:[{ 
-            src: item.img, 
-            width: '30%', 
-            top: '55%' 
-          }],
+          fonts: [
+            {
+              text: item.name,
+              top: '15%',
+              fontColor: '#fff',
+              fontSize: '14px'
+            }
+          ],
+          imgs: [
+            {
+              src: item.img,
+              width: '30%',
+              top: '55%'
+            }
+          ]
         })
       })
       this.prizes = prizes
@@ -128,7 +142,7 @@ export default {
     startCallBack () {
       this.$refs.LuckyWheel.play()
       setTimeout(() => {
-        this.$refs.LuckyWheel.stop(1);
+        this.$refs.LuckyWheel.stop(1)
       }, 2000)
     },
     endCallBack (prize) {
@@ -142,17 +156,20 @@ export default {
 </script>
 
 <style scoped>
-.lucky-wheel{
+* {
+  box-sizing: border-box;
+}
+.lucky-wheel {
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
 
-.lucky-wheel-img{
+.lucky-wheel-img {
   width: 100%;
 }
 
-.lucky-wheel-wrap{
+.lucky-wheel-wrap {
   background: url('../assets/images/header.png') no-repeat;
   background-size: 100% 100%;
   width: 100%;
@@ -162,7 +179,7 @@ export default {
   position: absolute;
 }
 
-.lucky-wheel-getted{
+.lucky-wheel-getted {
   width: 70px;
   height: 34px;
   line-height: 34px;
@@ -170,7 +187,7 @@ export default {
   box-sizing: border-box;
   padding-left: 6px;
   color: #fff;
-  background:  url('../assets/images/my_gift.png') no-repeat;
+  background: url('../assets/images/my_gift.png') no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 150px;
@@ -179,15 +196,15 @@ export default {
   z-index: 11;
 }
 
-.lucky-wheel-main{
+.lucky-wheel-main {
   width: 100%;
   margin-top: 160px;
   position: relative;
   z-index: 10;
 }
 
-.lucky-wheel-rules{
-  color: #FEEFCF;
+.lucky-wheel-rules {
+  color: #feefcf;
   background: url('../assets/images/footer.png') no-repeat;
   padding: 0 27px;
   background-size: 100% 100%;
@@ -196,7 +213,7 @@ export default {
   z-index: 2;
 }
 
-.lucky-wheel-rules p{
+.lucky-wheel-rules p {
   letter-spacing: 1px;
 }
 
