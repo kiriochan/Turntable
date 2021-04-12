@@ -63,7 +63,7 @@ export default {
           radius: '50px',
           imgs: [
             {
-              src: require('@/assets/images/button_begin.png'),
+              src: require('@/assets/images/button-begin.png'),
               width: '105%',
               top: '-120%'
             }
@@ -94,25 +94,26 @@ export default {
       prizeData: {} // 抽中
     }
   },
-  mounted () {
+  created () {
     this.getPrizesList(); // 请求奖品列表数据
   },
   methods: {
     getPrizesList () {
       const prizes = []
       let data = [
-        { name: '谢谢参与', img: require('@/assets/images/my_gift.png') },
-        { name: '礼物', img: require('@/assets/images/my_gift.png') },
-        { name: '抽奖券', img: require('@/assets/images/my_gift.png') },
-        { name: '元宝', img: require('@/assets/images/my_gift.png') },
-        { name: '元宝', img: require('@/assets/images/my_gift.png') },
-        { name: '抽奖券', img: require('@/assets/images/my_gift.png') },
-        { name: '元宝', img: require('@/assets/images/my_gift.png') },
-        { name: '抽奖券', img: require('@/assets/images/my_gift.png') }
+        { name: '谢谢参与', img: require('@/assets/images/btn-t.png') },
+        { name: '礼物', img: require('@/assets/images/btn-t.png') },
+        { name: '抽奖券', img: require('@/assets/images/btn-t.png') },
+        { name: '元宝', img: require('@/assets/images/btn-t.png') },
+        { name: '元宝', img: require('@/assets/images/btn-t.png') },
+        { name: '抽奖券', img: require('@/assets/images/btn-t.png') },
+        { name: '元宝', img: require('@/assets/images/btn-t.png') },
+        { name: '抽奖券', img: require('@/assets/images/btn-t.png') }
       ]
       data.forEach((item, index) => {
         prizes.push({
           name: item.name,
+          img: item.img,
           fonts: [
             {
               text: item.name,
@@ -125,7 +126,8 @@ export default {
             {
               src: item.img,
               width: '30%',
-              top: '55%'
+              height: '40%',
+              top: '48%'
             }
           ]
         })
@@ -198,7 +200,7 @@ export default {
   box-sizing: border-box;
   padding-left: 6px;
   color: #fff;
-  background: url('../assets/images/my_gift.png') no-repeat;
+  background: url('../assets/images/my-gift.png') no-repeat;
   background-size: 100% 100%;
   position: absolute;
   top: 150px;
