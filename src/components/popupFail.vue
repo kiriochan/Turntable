@@ -16,21 +16,27 @@
 
 <script>
 export default {
+    props: {
+        isShow: {
+            type: Boolean,
+            default: false
+        }
+    },
     data(){
         return {
-            remainingTimes: 2, // 剩余抽奖次数
-            isShow: false
+            // 剩余抽奖次数
+            remainingTimes: 2
         }
     },
     methods: {
         closePopup(){
-            this.isShow = false;
+            this.$emit('close-popup');
         },
         tryAgain(){
             if(this.remainingTimes != 0){
                 this.$emit('try-again');
             }
-            this.isShow = false;
+            this.closePopup();
         }
     }
 }

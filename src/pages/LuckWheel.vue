@@ -41,8 +41,8 @@
       <br/><p>
       10.凡参与活动的客户，即视为接受活动所有规则，在法律范围内的最终解释权归中信银行所有。</p>
     </div>
-    <popup-fail @try-again="startCallBack"></popup-fail>
-    <popup-success :param="prizeData"></popup-success>
+    <popup-fail @try-again="startCallBack" :isShow="showFail" @close-popup="closePopup(0)"></popup-fail>
+    <popup-success :param="prizeData" :isShow="showSuccess" @close-popup="closePopup(1)"></popup-success>
   </div>
 </template>
 
@@ -55,6 +55,8 @@ export default {
   },
   data () {
     return {
+      showFail: false,
+      showSuccess: false,
       prizes: [], // 转盘奖品列表
       buttons: [ // 转盘中间按钮 初始化
         {
@@ -89,7 +91,7 @@ export default {
         gutter: '1px',
         offsetDegree: 22.5
       },
-      prizeData: { name: '礼物', img: require('@/assets/images/my_gift.png'), prizeType: false } // 抽中
+      prizeData: {} // 抽中
     }
   },
   mounted () {
@@ -132,6 +134,7 @@ export default {
     },
     startCallBack () { // 抽奖回调
       this.$refs.LuckyWheel.play();
+      this.prizeData = {};
       let stopTimer = setTimeout(() => {
         this.$refs.LuckyWheel.stop(1);  // 控制转盘指针停止位置
         clearTimeout(stopTimer);
@@ -139,6 +142,22 @@ export default {
     },
     endCallBack (prize) { // 抽奖结束回调
       console.log(prize)
+      this.prizeData = prize;
+      this.openPopup();
+    },
+    openPopup(){
+      if(Object.keys(this.prizeData).length){
+        this.showSuccess = true;
+      } else {
+        this.showFail = true;
+      }
+    },
+    closePopup(index){
+      if(index){
+        this.showSuccess = false;
+      } else {
+        this.showFail = false;
+      }
     },
     toMyPrize () {
       this.$router.push('myPrize');

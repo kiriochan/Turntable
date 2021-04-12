@@ -21,16 +21,15 @@ export default {
         param: {
             type: Object,
             required: true
-        }
-    },
-    data(){
-        return {
-            isShow: false,
+        },
+        isShow: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {
         closePopup(){
-            this.isShow = false;
+            this.$emit('close-popup');
         },
         receivingAddress(){},
         useNow(){}
