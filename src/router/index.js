@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import luckWheel from '@/pages/LuckWheel'
+import lucky from '@/pages/lucky'
 import myPrize from '@/pages/myPrize'
 
 Vue.use(Router)
@@ -8,9 +8,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/luckWheel',
-      name: 'luckWheel',
-      component: LuckWheel
+      path: '/lucky',
+      name: 'lucky',
+      component: lucky
     },
     {
       path: '/myPrize',
@@ -20,7 +20,7 @@ export default new Router({
     // 重定向
     {
         path: '/', 
-        redirect: '/luckWheel' 
+        redirect: '/lucky' 
     }
   ]
 })
