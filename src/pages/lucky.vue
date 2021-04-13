@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="lucky-wheel-rules">
-      <p style="font-size:0.37rem;">活动细则</p>
+      <p>活动细则</p>
       <br/><p>
       1. 活动时间：2021年1月1日至2021年12月31日；</p>
       <br/><p>
@@ -216,6 +216,7 @@ export default {
 }
 
 .lucky-wheel-rules {
+  /* height: 22.93rem; */
   color: #feefcf;
   background: url('../assets/images/footer.png') no-repeat;
   padding: 0 0.72rem;
@@ -227,6 +228,7 @@ export default {
 
 .lucky-wheel-rules p {
   letter-spacing: 1px;
+  font-size: 0.32rem;
 }
 
 .lucky-wheel-rules p:first-child {
