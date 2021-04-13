@@ -6,8 +6,8 @@
         <LuckyWheel
           class="luck-draw"
           ref="LuckyWheel"
-          width="340px"
-          height="340px"
+          width="9.07rem"
+          height="9.07rem"
           :blocks="blocks"
           :prizes="prizes"
           :buttons="buttons"
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="lucky-wheel-rules">
-      <p style="font-size:14px;">活动细则</p>
+      <p style="font-size:0.37rem;">活动细则</p>
       <br/><p>
       1. 活动时间：2021年1月1日至2021年12月31日；</p>
       <br/><p>
@@ -60,7 +60,7 @@ export default {
       prizes: [], // 转盘奖品列表
       buttons: [ // 转盘中间按钮 初始化
         {
-          radius: '50px',
+          radius: '1.33rem',
           imgs: [
             {
               src: require('@/assets/images/button-begin.png'),
@@ -85,7 +85,7 @@ export default {
       ],
       defaultStyle: {
         fontColor: '#303133',
-        fontSize: '10px'
+        fontSize: '0.27rem'
       },
       defaultConfig: { // 转盘偏转角度
         gutter: '1px',
@@ -119,7 +119,7 @@ export default {
               text: item.name,
               top: '15%',
               fontColor: '#fff',
-              fontSize: '14px'
+              fontSize: '0.37rem'
             }
           ],
           imgs: [
@@ -185,24 +185,24 @@ export default {
   background: url('../assets/images/header.png') no-repeat;
   background-size: 100% 100%;
   width: 100%;
-  height: 559px;
-  padding: 0 18px;
+  height: 14.91rem;
+  padding: 0 0.48rem;
   box-sizing: border-box;
   position: absolute;
 }
 
 .lucky-wheel-getted {
-  width: 70px;
-  height: 34px;
-  line-height: 34px;
+  width: 1.87rem;
+  height: 0.91rem;
+  line-height: 0.91rem;
   text-align: center;
   box-sizing: border-box;
-  padding-left: 6px;
+  padding-left: 0.16rem;
   color: #fff;
   background: url('../assets/images/my-gift.png') no-repeat;
   background-size: 100% 100%;
   position: absolute;
-  top: 150px;
+  top: 4rem;
   right: 0;
   letter-spacing: 1px;
   z-index: 11;
@@ -210,7 +210,7 @@ export default {
 
 .lucky-wheel-main {
   width: 100%;
-  margin-top: 160px;
+  margin-top: 4.27rem;
   position: relative;
   z-index: 10;
 }
@@ -218,10 +218,10 @@ export default {
 .lucky-wheel-rules {
   color: #feefcf;
   background: url('../assets/images/footer.png') no-repeat;
-  padding: 0 27px;
+  padding: 0 0.72rem;
   background-size: 100% 100%;
   position: absolute;
-  top: 308px;
+  top: 8.21rem;
   z-index: 2;
 }
 
@@ -230,11 +230,14 @@ export default {
 }
 
 .lucky-wheel-rules p:first-child {
-  margin-top: 280px;
-  font-size: 14px;
+  margin-top: 7.47rem;
+  font-size: 0.37rem;
 }
 
 .lucky-wheel-rules p:last-child {
-  padding-bottom: 38px;
+  padding-bottom: 1.01rem;
+}
+.kkk{
+  width: 1.33rem;
 }
 </style>

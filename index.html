@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
     <title>turn-table</title>
   </head>
   <body>
@@ -10,3 +11,18 @@
     <!-- built files will be auto injected -->
   </body>
 </html>
+<script type="text/javascript">
+  (function (doc, win, undefined) {
+      var docEl = doc.documentElement,
+      resizeEvt = 'orientationchange' in win? 'orientationchange' : 'resize',
+      recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (clientWidth === undefined) return;
+          docEl.style.fontSize = 20 * (clientWidth / 187.5) + 'px';
+          // document.body.style.display = 'block';
+      };
+      if (doc.addEventListener === undefined) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false)
+  })(document, window);
+</script>
