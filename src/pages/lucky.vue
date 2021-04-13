@@ -255,7 +255,7 @@ img {
 .luck-draw {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: calc(-1000px + 96%);
+  margin-bottom: calc(-1000px + 97%);
 }
 .lucky-wheel-getted {
   position: absolute;
@@ -265,11 +265,11 @@ img {
   margin-top: 40%;
   width: 1.9rem;
   height: 0.9rem;
+  line-height: 0.9rem;
   padding-left: 6px;
   overflow: hidden;
   color: #fff;
   text-align: center;
-  line-height: 1rem;
   letter-spacing: 1px;
   background: url('../assets/images/my-gift.png') no-repeat;
   background-size: 100% 100%;
