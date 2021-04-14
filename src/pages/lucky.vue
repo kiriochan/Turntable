@@ -263,13 +263,13 @@ img {
   top: 0;
   right: 0;
   margin-top: 40%;
-  width: 1.9rem;
-  height: 0.9rem;
+  width: 70px;
+  height: 34px;
   padding-left: 6px;
   overflow: hidden;
   color: #fff;
   text-align: center;
-  line-height: 1rem;
+  line-height: 35px;
   letter-spacing: 1px;
   background: url('../assets/images/my-gift.png') no-repeat;
   background-size: 100% 100%;
