@@ -255,7 +255,7 @@ img {
 .luck-draw {
   width: 90%;
   margin: 0 auto;
-  margin-bottom: calc(-1000px + 96%);
+  margin-bottom: calc(-1000px + 97%);
 }
 .lucky-wheel-getted {
   position: absolute;
