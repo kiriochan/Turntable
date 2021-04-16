@@ -1,5 +1,5 @@
 <template>
-<div class="list-item">
+<div class="list-item" @click.stop="readDetail(params)">
     <div class="item-img">
         <img :src="params.img" alt="">
     </div>
@@ -11,7 +11,7 @@
         中奖时间: {{params.time}}
         </p>
     </div>
-    <div class="toUse" @click="toUse(params.id)">去查看</div>
+    <div class="toUse" @click.stop="toUse(params)">去查看</div>
 </div>
 </template>
 
@@ -24,8 +24,11 @@ export default {
         }
     },
     methods: {
-        toUse(id){
-            this.$emit('to-use',id);
+        toUse(data){
+            this.$emit('to-use',data);
+        },
+        readDetail(item){
+            this.$emit('read-detail',item);
         }
     }
 }
@@ -35,11 +38,12 @@ export default {
 .list-item {
     width: 100%;
     height: 3.17rem;
-    margin-bottom: 0.21rem;
+    margin-bottom: 0.13rem;
     background: url('../assets/images/bg-listitem.png') no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
     padding: 0.37rem;
+    padding-right: 0;
     display: flex;
 }
 .item-img {
@@ -78,10 +82,11 @@ export default {
 .toUse{
     font-size: 0.48rem;
     color: #fff;
-    margin-left: 0.61rem;
+    margin-left: 0.7rem;
     display: flex;
     align-items: center;
     position: relative;
     bottom: 0.08rem;
+    padding-right: 0.2rem;
 }
 </style>

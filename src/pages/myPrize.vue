@@ -4,36 +4,49 @@
     <card-item :params="item" 
       v-for="(item,index) in cardList" :key="index"
       @to-use="toUse"
-      ></card-item>
+      @read-detail="readDetail"
+    ></card-item>
   </div>
+  <details-tip v-if="ishowDetail" 
+    :prizeType="prizeTyped" 
+    :couponCode="couponCoded"
+    @close-popup="closePopup"
+  ></details-tip>
 </div>
 </template>
 
 <script>
 import cardItem from '../components/card'
+import detailsTip from '../components/detailsTip'
 export default {
   components:{
-    cardItem
+    cardItem,
+    detailsTip
   },
   data () {
     return {
+      ishowDetail: false,
+      prizeTyped: 0,
+      couponCoded: '-',
       cardList:[
-        {id:0, time:'2021-03-14 23:59', name: '礼物', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
-        {id:2, time:'2021-03-14 23:59', name: '抽奖券抽奖券抽奖券抽奖券抽奖券抽奖券抽奖券', img: require('@/assets/images/button-begin.png')}
+        {id:'d05asd6', prizeType: 0, time:'2021-03-14 23:59', name: '礼物', img: require('@/assets/images/button-begin.png')},
+        {id:'pu5ert', prizeType: 1, time:'2021-03-14 23:59', name: '抽奖券', img: require('@/assets/images/button-begin.png')},
+        {id:'idfsd62', prizeType: 1, time:'2021-03-14 23:59', name: '抽奖券抽奖券抽奖券抽奖券抽奖券抽奖券抽奖券', img: require('@/assets/images/button-begin.png')}
       ]
     }
   },
   methods:{
-    toUse(id){
-      console.log(id)
+    toUse(data){
+      console.log(data)
+    },
+    readDetail(item){
+      console.log(item)
+      this.prizeTyped = item.prizeType;
+      this.couponCoded = item.id;
+      this.ishowDetail = true;
+    },
+    closePopup(){
+      this.ishowDetail = false;
     }
   }
 }
