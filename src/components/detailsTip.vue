@@ -25,7 +25,6 @@ export default {
       type: Number,
       required: true
     },
-<<<<<<< HEAD
     couponCode: {
       type: String,
       required: true
@@ -54,49 +53,19 @@ export default {
   },
   created () {
     this.detailsList[this.prizeType][1] = this.couponCode
+    // 下面是图片预加载
+    function init () {
+      let imgs = [require('../assets/images/detail-bg.png')]
+      imgs.forEach(value => {
+        let image = new Image()
+        image.src = value
+      })
+    }
+    init()
   },
   methods: {
     closePopup () {
       this.$emit('close-popup')
-=======
-    data(){
-        return{
-            detailsList: [
-                [
-                    '100元优惠券',
-                    '--',
-                    '详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容',
-                    '1.使用流程使用流程使用流程\n2.使用流程使用流程使用流程使用流程\n3.asasas',
-                    '1.使用流使用说明使用说明使用说明\n2.使用说明使用说明\n3.使用说明'
-                ],
-                [
-                    '亚朵酒店258元券包 258元券包',
-                    '--',
-                    '亚朵酒店258元优惠券⼤礼包，其中包含：30元优惠券1张+20元优惠券1张+40元优惠券1张（满800可⽤）+80元优惠券1张（满1200可⽤）+延时券1张；',
-                    '1.⽤户参与活动后获得亚朵酒店⼤礼包券码；\n2.复制链接⾄浏览器 https://wechat.yaduo.com/H5/memberExchange/#/，输⼊⼿机号，验证码，券码即可领取；\n3.下载亚朵酒店APP查看并使⽤。',
-                    '1.兑换码有效期：领取兑换码后的2⼩时内完成兑换，否则过期作废；\n2.兑换后的有效期：优惠券、权益券有效期为兑换领取之后三个⽉；\n3.每间夜可使⽤⼀张酒店优惠券，可叠加会员折扣使⽤。每间夜最多使⽤两张延时退房券，每张延时退房券有效时间为两⼩时；\n4.优惠券适⽤于全国亚朵⻔店，使⽤时提前在“亚朵APP/亚朵⽣活微信公众号/亚朵⼩程序”中预订房间，提交订单时选择使⽤即可；'
-                ]
-            ],
-            detailsListTitle:['权益名','券码','详情','使用流程','使用说明']
-        }
-    },
-    created(){
-        this.detailsList[this.prizeType][1] = this.couponCode;
-        // 下面是图片预加载
-        function init () {
-            let imgs = [require('../assets/images/detail-bg.png')];
-            imgs.forEach(value => {
-                let image = new Image();
-                image.src = value;
-            })
-        }
-        init();
-    },
-    methods:{
-        closePopup(){
-            this.$emit('close-popup');
-        }
->>>>>>> 250c64be6dbf983211750aa29a07d79661366832
     }
   }
 }
