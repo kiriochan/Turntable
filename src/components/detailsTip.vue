@@ -1,17 +1,21 @@
 <template>
-<div class="details-tip">
+  <div class="details-tip">
     <div class="details-main">
-        <div class="popup-close-btn" @click="closePopup"></div>
-        <img src="../assets/images/detail-title.png" alt="">
-        <div class="details-text">
-            <div class="details-text-li" v-for="(item,index) in detailsList[prizeType]" :key="index">
-                <p class="details-text-title">{{detailsListTitle[index]}}</p>
-                <p class="details-text-main">{{item}}</p>
-                <br>
-            </div>
+      <div class="popup-close-btn" @click="closePopup"></div>
+      <img src="../assets/images/detail-title.png" alt="" />
+      <div class="details-text">
+        <div
+          class="details-text-li"
+          v-for="(item, index) in detailsList[prizeType]"
+          :key="index"
+        >
+          <p class="details-text-title">{{ detailsListTitle[index] }}</p>
+          <p class="details-text-main">{{ item }}</p>
+          <br />
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -19,10 +23,6 @@ export default {
     props: {
         prizeType: {
             type: Number,
-            required: true
-        },
-        couponCode: {
-            type: String,
             required: true
         }
     },
@@ -59,74 +59,74 @@ export default {
 </script>
 
 <style scoped>
-.details-tip{
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
+.details-tip {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
 }
-.details-main{
-    width: 100%;
-    height: 13.95rem;
-    background: url('../assets/images/detail-bg.png') no-repeat;
-    background-size: 100% 100%;
-    box-sizing: border-box;
-    padding: 0.25rem 0.87rem 1.32rem 1.12rem;
-    position: relative;
+.details-main {
+  width: 100%;
+  height: 13.95rem;
+  background: url('../assets/images/detail-bg.png') no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  padding: 0.25rem 0.87rem 1.32rem 1.12rem;
+  position: relative;
 }
-.popup-close-btn{
-    width: 22px;
-    height: 22px;
-    background: url('../assets/images/close-fff.png') no-repeat;
-    background-size: 100% 100%;
-    position: absolute;
-    top: -1.09rem;
-    right: 1.11rem;
+.popup-close-btn {
+  width: 22px;
+  height: 22px;
+  background: url('../assets/images/close-fff.png') no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -1.09rem;
+  right: 1.11rem;
 }
-.details-main img{
-    width: 2.88rem;
-    height: 0.83rem;
-    margin-left: 50%;
-    position: relative;
-    left: -1.57rem;
-    margin-bottom: 0.73rem;
+.details-main img {
+  width: 2.88rem;
+  height: 0.83rem;
+  margin-left: 50%;
+  position: relative;
+  left: -1.57rem;
+  margin-bottom: 0.73rem;
 }
-.details-text{
-    height: 10.79rem;
-    padding-right: 0.61rem;
-    overflow-y: auto;
+.details-text {
+  height: 10.79rem;
+  padding-right: 0.61rem;
+  overflow-y: auto;
 }
-.details-text::-webkit-scrollbar{
+.details-text::-webkit-scrollbar {
   width: 0.27rem;
   border-radius: 0.27rem;
   position: fixed;
   right: 0;
 }
-.details-text::-webkit-scrollbar-track{
-  background-color:#E75918;
-  border-radius: 0.27rem; 
-} 
-.details-text::-webkit-scrollbar-thumb{
-  background-color:#fff;
+.details-text::-webkit-scrollbar-track {
+  background-color: #e75918;
   border-radius: 0.27rem;
 }
-.details-text-title{
-    font-family: 'SourceHanSansCN-Bold';
-    font-size: 0.4rem;
-    font-weight: 600;
-    color: #E75918;
-    letter-spacing: 0.05rem;
-    line-height: 0.7rem;
+.details-text::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 0.27rem;
 }
-.details-text-main{
-    font-size: 0.35rem;
-    color: #444;
-    letter-spacing: 1px;
-    word-wrap: break-word;
-    white-space: pre-line;
+.details-text-title {
+  font-family: 'SourceHanSansCN-Bold';
+  font-size: 0.4rem;
+  font-weight: 600;
+  color: #e75918;
+  letter-spacing: 0.05rem;
+  line-height: 0.7rem;
+}
+.details-text-main {
+  font-size: 0.35rem;
+  color: #444;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  white-space: pre-line;
 }
 </style>
