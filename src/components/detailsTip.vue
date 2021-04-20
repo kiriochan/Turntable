@@ -49,15 +49,6 @@ export default {
     },
     created(){
         this.detailsList[this.prizeType][1] = this.couponCode;
-        // 下面是图片预加载
-        function init () {
-            let imgs = [require('../assets/images/detail-bg.png')];
-            imgs.forEach(value => {
-                let image = new Image();
-                image.src = value;
-            })
-        }
-        init();
     },
     methods:{
         closePopup(){

@@ -8,7 +8,7 @@
             {{params.name}}
         </div>
         <p class="prize-time">
-        中奖时间: {{params.time}}
+            中奖时间: {{params.time}}
         </p>
     </div>
     <div class="toUse" @click.stop="toUse(params)">去查看</div>
